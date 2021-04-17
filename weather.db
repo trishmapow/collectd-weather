@@ -1,0 +1,7 @@
+weather_temp value:GAUGE:-100:100
+weather_lux value:GAUGE:0:U
+weather_gas value:GAUGE:0:1023
+weather_speed value:GAUGE:0:U
+weather_gust value:GAUGE:0:U
+weather_dir value:GAUGE:0:359
+weather_rain value:GAUGE:0:U
