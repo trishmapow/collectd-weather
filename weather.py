@@ -2,10 +2,12 @@
 
 import collectd
 import serial
+from serial.tools.list_ports import comports
 import time
 import math
 
-s = serial.Serial("/dev/ttyUSB1", timeout=1)
+dev = next(x for x in comports() if x.name.startswith('ttyUSB')).device
+s = serial.Serial(dev, timeout=1)
 V = collectd.Values(host='', plugin='weather')
 dir_map = {738: 0, 590: 22.5, 725: 45, 712: 67.5, 90: 90, 67: 112.5, 160: 135, 115: 157.5, 250: 180, 215: 202.5, 570: 225, 540: 247.5, 912: 270, 785: 292.5, 838: 315, 645: 337.5}
 DIR_TOL = 6 # +/- for dir_map
